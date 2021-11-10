@@ -30,10 +30,10 @@ code --new-window .
 
 ## pytube
 
-https://github.com/pytube/pytube
+- https://github.com/pytube/pytube
 
 ```bash
-cd /workspace/src/pytube/0-input
+cd /workspace/src/pytube/
 
 python -V
 
@@ -43,13 +43,21 @@ python3 "helloworld.py"
 
 #pip install -r requirements.txt
 
-#pytube https://www.youtube.com/watch?v=lx_zZvz5MFY
+pytube --version
 
-pytube https://www.youtube.com/playlist?list=OLAK5uy_l70dJVYR3hkcbC_b9d4gmMa8xhDc0usbI
+echo -e '' '\n'
 
-```
+cd /workspace/src/pytube/0-input
+
+PATH_FILE="/workspace/src/pytube/playlists.txt"
+while IFS= read -r line; do
+  if [[ ! "$line" || "$line" == '#'* ]]; then continue ; fi
+  echo -e 'pytube' $line '\n'
+done < $PATH_FILE
 
 # mp4tomp3.py
+
+- https://github.com/andyp123/mp4_to_mp3
 
 ```bash
 🛑️
@@ -61,7 +69,7 @@ brew install lame
 find \
   /workspace/src/pytube/0-input/* \
   -type d | while read ITEM; do
-  echo -e "\e[38;2;255;0;0m $ITEM \e[0m"
+  # echo -e "\e[38;2;255;0;0m $ITEM \e[0m"
   BASENAME_ITEM="$(basename "${ITEM}")"
   # echo "👉️ BASENAME_ITEM: ${BASENAME_ITEM}"
   INPUT="${ITEM}"
@@ -69,7 +77,7 @@ find \
   OUTPUT="/workspace/src/pytube/1-ouput/${BASENAME_ITEM}"
   # echo "👉️ OUTPUT: ${OUTPUT})"
   mkdir -p "$OUTPUT"
-  echo "✅️👇️"
-  echo 'python' '/workspace/src/pytube/mp4tomp3.py' \'"$INPUT"\' \'"$OUTPUT"\'
+  # echo "✅️👇️"
+  echo -e 'python' '/workspace/src/pytube/mp4tomp3.py' \'"$INPUT"\' \'"$OUTPUT"\' '\n'
 done
 ```

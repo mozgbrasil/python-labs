@@ -2,7 +2,7 @@
 
 ![valid XHTML][checkmark]
 
-# python-labs
+# python-labs 👉️
 
 https://docs.python.org/
 

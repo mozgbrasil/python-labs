@@ -12,7 +12,5 @@
   "editor.formatOnSave": true,
   "editor.fontSize": 16,
   "editor.tabSize": 2,
-  "workbench.sideBar.location": "right",
-  "editor.minimap.enabled": false,
-  "workbench.colorTheme": "Default Light+"
+  "editor.minimap.enabled": false
 }

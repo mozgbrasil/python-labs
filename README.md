@@ -30,9 +30,7 @@ code --new-window .
 
 ## pytube
 
-- https://github.com/pytube/pytube
-
-```bash
+````bash
 cd /workspace/src/pytube/
 
 python -V
@@ -49,6 +47,10 @@ echo -e '' '\n'
 
 cd /workspace/src/pytube/0-input
 
+# pytube
+
+- https://github.com/pytube/pytube
+
 PATH_FILE="/workspace/src/pytube/playlists.txt"
 while IFS= read -r line; do
   if [[ ! "$line" || "$line" == '#'* ]]; then continue ; fi
@@ -63,7 +65,7 @@ done < $PATH_FILE
 🛑️
 brew install mplayer
 brew install lame
-```
+````
 
 ```bash
 find \
